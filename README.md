@@ -1,21 +1,16 @@
-name: Bygg och testa ABC80 Emulator
+# Altar BASIC Emulator – Kom igång med ABC80/ABC800 på Windows
 
-on:
-  push:
-  pull_request:
+## Windows
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Klona repo
-        uses: actions/checkout@v4
+1. Ladda hem senaste utgåvan från [abc80sim releases](https://github.com/bztsrc/abc80sim/releases).
+2. Packa upp zip-filen och starta `abc80sim.exe`.
+3. Tryck `F1` i emulatorn för att öppna menyn.
+4. Ladda `altar_basic.bas`.
+5. Skriv `RUN` i emulatorn.
 
-      - name: Installera byggverktyg
-        run: sudo apt-get update && sudo apt-get install -y build-essential libsdl2-dev git
+## För Linux/macOS
 
-      - name: Kör installation och bygg
-        run: bash install-and-run-abc80sim.sh || true
-
-      - name: Bekräftelsemeddelande
-        run: echo "🚀 Workflowen kördes klart! Kontrollera stegen ovan för eventuella fel."
+Se instruktioner ovan eller kör:
+```bash
+bash install-and-run-abc80sim.sh
+```
